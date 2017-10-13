@@ -12,9 +12,11 @@
 		32FB90731F902CBB000B6830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32FB90711F902CBB000B6830 /* Main.storyboard */; };
 		32FB90751F902CBB000B6830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32FB90741F902CBB000B6830 /* Assets.xcassets */; };
 		32FB90781F902CBB000B6830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32FB90761F902CBB000B6830 /* LaunchScreen.storyboard */; };
+		32FB90821F903253000B6830 /* lame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FB90801F903216000B6830 /* lame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		325E2F711F9047CC0072FF01 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		32FB906A1F902CBB000B6830 /* MP3RecordingSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MP3RecordingSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32FB906D1F902CBB000B6830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32FB906F1F902CBB000B6830 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,7 @@
 		32FB90741F902CBB000B6830 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32FB90771F902CBB000B6830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32FB90791F902CBB000B6830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32FB90801F903216000B6830 /* lame.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = lame.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32FB90821F903253000B6830 /* lame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 			children = (
 				32FB906C1F902CBB000B6830 /* MP3RecordingSample */,
 				32FB906B1F902CBB000B6830 /* Products */,
+				32FB90811F903253000B6830 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +59,31 @@
 		32FB906C1F902CBB000B6830 /* MP3RecordingSample */ = {
 			isa = PBXGroup;
 			children = (
+				32FB907F1F9031F3000B6830 /* Frameworks */,
 				32FB906D1F902CBB000B6830 /* AppDelegate.swift */,
 				32FB906F1F902CBB000B6830 /* ViewController.swift */,
 				32FB90711F902CBB000B6830 /* Main.storyboard */,
 				32FB90741F902CBB000B6830 /* Assets.xcassets */,
 				32FB90761F902CBB000B6830 /* LaunchScreen.storyboard */,
 				32FB90791F902CBB000B6830 /* Info.plist */,
+				325E2F711F9047CC0072FF01 /* Bridging-Header.h */,
 			);
 			path = MP3RecordingSample;
+			sourceTree = "<group>";
+		};
+		32FB907F1F9031F3000B6830 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32FB90801F903216000B6830 /* lame.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		32FB90811F903253000B6830 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,10 +298,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MTP6LLLBBQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MP3RecordingSample/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MP3RecordingSample/Frameworks/lame.framework/Headers/**";
 				INFOPLIST_FILE = MP3RecordingSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.ubunifu.MP3RecordingSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MP3RecordingSample/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -291,10 +319,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MTP6LLLBBQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MP3RecordingSample/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MP3RecordingSample/Frameworks/lame.framework/Headers/**";
 				INFOPLIST_FILE = MP3RecordingSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.ubunifu.MP3RecordingSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MP3RecordingSample/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
