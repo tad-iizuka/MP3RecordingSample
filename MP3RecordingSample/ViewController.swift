@@ -24,6 +24,7 @@ class ViewController: UIViewController {
 	var isPlay = false
 	var isRec = false
 	var isMP3Active = false
+	var sdate: Date!
 
 	@IBOutlet weak var segment: UISegmentedControl!
 	@IBAction func segment(_ sender: Any) {
@@ -97,7 +98,7 @@ class ViewController: UIViewController {
 		try! AVAudioSession.sharedInstance().setActive(true)
 
 		let format = AVAudioFormat(commonFormat: AVAudioCommonFormat.pcmFormatInt16,
-			sampleRate: 44100.0,
+			sampleRate: 48000.0,
 			channels: 1,
 			interleaved: true)
 
@@ -162,6 +163,8 @@ class ViewController: UIViewController {
 			at: nil,
 			completionHandler: self.completion)
 
+		self.sdate = Date()
+		print(self.audioFile.length)
 		try! self.audioEngine.start()
 		self.audioFilePlayer.play()
 
@@ -174,6 +177,8 @@ class ViewController: UIViewController {
 			self.audioFilePlayer.stop()
 		}
 		self.audioEngine.stop()
+		let elapsed = Date().timeIntervalSince(self.sdate)
+		print(elapsed)
 		try! AVAudioSession.sharedInstance().setActive(false)
 	}
 
@@ -224,7 +229,7 @@ class ViewController: UIViewController {
 		let lame = lame_init()
 		lame_set_num_channels(lame, 1)
 		lame_set_mode(lame, MONO)
-		lame_set_in_samplerate(lame, 44100)
+		lame_set_in_samplerate(lame, 48000)
 		lame_set_brate(lame, rate)
 		lame_set_VBR(lame, vbr_off)
 		lame_init_params(lame)
